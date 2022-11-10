@@ -1,5 +1,11 @@
 <template>
     <div class="bg-gray-800 h-screen p-[50px]">
+        <div class="absolute left-[-225px] top-[-50px]">
+            <img src="../assets/images/rocket-use.png" alt="">
+        </div>
+        <div class="absolute right-[50px] bottom-[30px] max-h-[300px]">
+            <img src="../assets/images/planet.png" alt="" class="h-[100px]">
+        </div>
         <div class="text-center flex justify-center">
             <h1 class="text-green-500 text-[60px] w-[200px]">C N O</h1>
         </div>
@@ -83,7 +89,7 @@ export default {
                     year : "KU81",
                     birthday : "12-27-2002",
                     facebook : "https://www.facebook.com/punnatud.duengkae",
-                    github :"https://www.github.com//",
+                    github :"https://www.github.com/Punnatud/",
                     instagram: "https://www.instagram.com/nokkokalderaan/",
                     image : "https://scontent-sin6-3.xx.fbcdn.net/v/t1.15752-9/313894314_664603271857321_204835522882551428_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=g_nLz-GHp5IAX8DLPcP&tn=9Fdpok23RdUNBt3U&_nc_ht=scontent-sin6-3.xx&oh=03_AdSNfyVmHC1ynKkc06kPhEZvW_v4rCz1fBNMMR1jO5729g&oe=6393E073"
                 }

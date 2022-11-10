@@ -19,10 +19,10 @@
             </div>
         </div>
         <div class="border-t-[3px] border-gray-800 mt-[4px] text-right">
-            <div class="mt-[10px]">
-                <a :href=getUrl(github) target="_blank"><font-awesome-icon icon="fa-brands fa-github" class="text-[25px] m-[5px]" /></a>
-                <a :href=getUrl(facebook) target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" class="text-[25px] m-[5px]" /></a>
-                <a :href=getUrl(instagram) target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" class="text-[25px] m-[5px]" /></a>
+            <div class="mt-[10px] space-x-[3px]">
+                <a :href=getUrl(github) target="_blank" title="Github" class="hover:text-white"><font-awesome-icon icon="fa-brands fa-github" class="text-[25px] m-[5px]" /></a>
+                <a :href=getUrl(facebook) target="_blank" title="Facebook" class="hover:text-blue-500"><font-awesome-icon icon="fa-brands fa-facebook" class="text-[25px] m-[5px]" /></a>
+                <a :href=getUrl(instagram) target="_blank" title="Instagram" class="hover:text-red-400"><font-awesome-icon icon="fa-brands fa-instagram" class="text-[25px] m-[5px]" /></a>
             </div>
         </div>
     </div>
@@ -61,15 +61,15 @@ export default {
         },
         facebook :{
             type: String,
-            default : "/profile"
+            default : "facebook.com"
         },
         instagram :{
             type: String,
-            default : "/profile"
+            default : "instagram.com"
         },
         github :{
             type: String,
-            default : "/profile"
+            default : "github.com"
         },
     },
 
