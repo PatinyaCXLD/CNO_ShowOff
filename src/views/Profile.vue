@@ -7,7 +7,7 @@
             <img src="../assets/images/planet.png" alt="" class="h-[100px]">
         </div>
         <div class="text-center flex justify-center">
-            <h1 class="text-green-500 text-[60px] w-[200px]">C N O</h1>
+            <h1 class="text-white text-[60px] w-[280px]">{ C N O }</h1>
         </div>
         <div class="p-[50px] flex justify-center">
                 <div :class="getMemberNumber()" v-for="member in members" :key="member">
