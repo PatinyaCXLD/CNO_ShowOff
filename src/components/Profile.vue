@@ -71,6 +71,10 @@ export default {
             type: String,
             default : "github.com"
         },
+        detail : {
+            type: String,
+            default : "None"
+        }
     },
 
     methods: {
