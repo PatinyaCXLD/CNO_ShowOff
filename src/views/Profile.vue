@@ -1,31 +1,34 @@
 <template>
-    <div class="bg-gray-800 h-screen p-[50px]">
-        <div class="absolute left-[-225px] top-[-50px]">
+    <div class="bg-gray-800 min-h-screen min-w-screen p-[50px] flex justify-center">
+        <div class="fixed left-[-225px] top-[-50px]">
             <img src="../assets/images/rocket-use.png" alt="">
         </div>
-        <div class="absolute right-[50px] bottom-[30px] max-h-[300px]">
+        <div class="fixed right-[50px] bottom-[30px] max-h-[300px]">
             <img src="../assets/images/planet.png" alt="" class="h-[100px]">
         </div>
-        <div class="text-center flex justify-center">
-            <h1 class="text-white text-[60px] w-[280px]">{ C N O }</h1>
+        <div class="flex-col justify-center">
+            <div class="text-center flex justify-center h-[15px]">
+                <h1 class="text-white text-[60px] w-[280px]">{ C N O }</h1>
+            </div>
+            <div class="p-[50px] flex justify-center">
+                    <div :class="getMemberNumber()" v-for="member in members" :key="member">
+                        <profileCard
+                        :name = "member.name"
+                        :nickname = "member.nickname"
+                        :inGameName = "member.inGameName"
+                        :team = "member.team"
+                        :year = "member.year"
+                        :birthday = "member.birthday"
+                        :image = "member.image"
+                        :facebook = "member.facebook"
+                        :github = "member.github"
+                        :instagram = "member.instagram"
+                        >
+                        </profileCard> 
+                    </div>
+            </div>
         </div>
-        <div class="p-[50px] flex justify-center">
-                <div :class="getMemberNumber()" v-for="member in members" :key="member">
-                    <profileCard
-                    :name = "member.name"
-                    :nickname = "member.nickname"
-                    :inGameName = "member.inGameName"
-                    :team = "member.team"
-                    :year = "member.year"
-                    :birthday = "member.birthday"
-                    :image = "member.image"
-                    :facebook = "member.facebook"
-                    :github = "member.github"
-                    :instagram = "member.instagram"
-                    >
-                    </profileCard> 
-                </div>
-        </div>
+        
             <!-- <div class="basis-1/3">
                 <profileCard
                     name = "Sittipong Hemloum"
@@ -50,7 +53,7 @@
                     >
                 </profileCard>
             </div> -->
-        </div>
+    </div>
 </template>
 
 <script>
