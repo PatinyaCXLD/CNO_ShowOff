@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-800 min-h-[100vh] min-w-screen bg-fixed p-[50px] flex justify-center">
+    <div class="bg-gray-800 min-h-screen min-w-screen bg-fixed p-[50px] flex justify-center">
         <div class="fixed left-[-225px] top-[-50px]">
             <img src="../assets/images/rocket-use.png" alt="">
         </div>
@@ -7,10 +7,10 @@
             <img src="../assets/images/planet.png" alt="" class="h-[100px]">
         </div>
         <div class="flex-col justify-center">
-            <div class="text-center flex justify-center h-[15px]">
+            <div class="text-center flex justify-center h-[15px] mt-[5%]">
                 <h1 class="text-white text-[60px] w-[280px]">{ C N O }</h1>
             </div>
-            <div class="p-[50px] flex flex-wrap justify-center">
+            <div class="p-[50px] flex flex-wrap justify-center mt-[8%]">
                     <div :class="getMemberNumber()" v-for="member in members" :key="member">
                         <profileCard
                         :name = "member.name"

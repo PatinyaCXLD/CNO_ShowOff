@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/CNO_ShowOff/",
+  base: "/vue101/",
   plugins: [vue()],
   resolve: {
     alias: {
