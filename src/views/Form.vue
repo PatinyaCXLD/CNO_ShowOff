@@ -7,7 +7,7 @@
     </div>
 
     <div>this is onchange</div>
-    <input class="p-2 border-2" type="text" id="text" @action="count=add(count)">
+    <input class="p-2 border-2" type="text" id="text" @change="count=add(count)">
     <div>
         count is {{count}}
     </div>

@@ -12,7 +12,7 @@
             </div>
             <div class="p-[50px] flex flex-wrap justify-center mt-[5%]">
                     <div :class="getMemberNumber()" v-for="member in members" :key="member">
-                        <button @click="selected=showPopup(member.name);this.name=member.name;this.nickname=member.nickname;this.detail=member.detail;">
+                        <button @click="showPopup(member.name);this.name=member.name;this.nickname=member.nickname;this.detail=member.detail;">
                             <profileCard
                             :name = "member.name"
                             :nickname = "member.nickname"
@@ -29,7 +29,7 @@
                         </button>
                     </div>
             </div>
-            <div v-if="selected"  class="bg-gray-900 h-cover w-[30%] ml-[35%] pb-[12px] rounded-xl animate-popup font-code font-regular">
+            <div v-if="selected" ref="detailBox" class="bg-gray-900 h-cover w-[30%] ml-[35%] pb-[12px] rounded-xl animate-popup font-code font-regular">
                 <div class="bg-gray-300 pt-[1.5%] pl-[1.5%] pb-[1%] rounded-t-xl">
                     <div class="flex">
                         <div class="h-[10px] w-[10px] rounded-full bg-green-600 mr-[4px]"></div>
@@ -44,7 +44,7 @@
                     <div class="text-blue-300 ml-[3%] pt-[2%] mr-[3%]">main : <p class="text-yellow-500">{</p></div>
                     <div class="text-gray-400 ml-[35px] mr-[35px]">{{detail}}</div>
                     <div class="text-yellow-500 ml-[3%]">}<span class="text-white">,</span></div>
-                    </div>
+                </div>
                 
             </div>
         </div>
@@ -93,7 +93,7 @@ export default {
                     github :"https://www.github.com/PatinyaCXLD/",
                     instagram: "https://www.instagram.com/cxld.pty/",
                     detail : "สวัสดีครับ ผมนายปฏิญญา สายจันทดี ชื่อเล่นต้นหนาวนะครับ ตอนนี้ศึกษาอยู่ที่มหาวิทยาลัยเกษตรศาสตร์ บางเขน คณะวิทยาการคอมพิวเตอร์ สาขาภาควิชาวิทยาการคอมพิวเตอร์ ปีที่ 2 ครับ",
-                    image : "https://scontent-sin6-4.xx.fbcdn.net/v/t39.30808-6/306148111_1880034558867492_7239761071913403261_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=X2MKA-ZW1JcAX9v_Uu6&_nc_ht=scontent-sin6-4.xx&oh=00_AfAWqFIQ_bf49w75-KLuajS4IVz1ihVV7PHUk-tzih-vlQ&oe=63706736"
+                    image : "https://scontent.fbkk5-4.fna.fbcdn.net/v/t39.30808-6/306148111_1880034558867492_7239761071913403261_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_XeFqM296J4AX8utin4&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfAeICXwBymDgAushZ-y3tunHsjPAJs5a7MqDMSJpx640g&oe=637655F6"
                 },{
                     name : "Sittipong Hemloum",
                     nickname : "Ong",
@@ -138,16 +138,43 @@ export default {
         getMemberNumber() {
             return 'basis-1/'+this.members.length +" flex justify-center h-fit";
         },
+        scrollToElement(refName) {
+            var element = this.$refs[refName];
+            var top = element.offsetTop;
+            
+            window.scrollTo(0,top)
+        },
         showPopup(name){
-            console.log(this.name,name);
             if (name != this.name) {
-                return true;
+                this.selected = true;
+                this.goToBottom();
             }else if (!this.selected){
-                return true;
+                this.selected = true;
+                this.goToBottom();
             }else{
-                return false;
+                this.goToTop();
+                setTimeout( ()=>{
+                    this.selected = false;
+                    },300
+                );
             }
+        },
+        goToBottom(){
+            setTimeout(()=>{
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth'
+                }),
+                10
+            })
+        },
+        goToTop(){
+            window.scrollTo({top:0,behavior:'smooth'});
+        },
+        getHeight(){
+            console.log(document.documentElement.scrollHeight)
         }
+
     },
 }
 </script>
