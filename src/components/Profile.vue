@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center w-[240px] h-fit m-[50px] border border-gray-200 rounded-md shadow-md p-3.5 scale-100  bg-white overflow-hidden hover:scale-105 ease-in duration-100 hover:bg-slate-300" :title="getName(name)">
+    <div class="text-center w-[240px] h-fit border border-gray-200 rounded-md shadow-md p-3.5 scale-100  bg-white overflow-hidden hover:scale-105 ease-in duration-100 hover:bg-slate-300" :title="getName(name)">
         <div class="relative content-center">
             <div>
                 <img :src= "getImage(image)" alt="Profile Image" title="Profile Image" class="rounded-full h-[210px] w-[210px]  border border-black">

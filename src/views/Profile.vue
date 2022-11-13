@@ -10,9 +10,9 @@
             <div class="text-center flex justify-center h-[15px]">
                 <h1 class="text-white text-[60px] w-[280px]">{ C N O }</h1>
             </div>
-            <div class="p-[50px] flex flex-wrap justify-center mt-[5%]">
+            <div class="p-[50px] flex flex-wrap justify-center mt-[10%]">
                     <div :class="getMemberNumber()" v-for="member in members" :key="member">
-                        <button @click="showPopup(member.name);this.name=member.name;this.nickname=member.nickname;this.detail=member.detail;">
+                        <button @click="showPopup(member.name);this.name=member.name;this.nickname=member.nickname;this.detail=member.detail;" class="h-cover w-cover">
                             <profileCard
                             :name = "member.name"
                             :nickname = "member.nickname"
@@ -76,6 +76,8 @@
             </div> -->
     </div>
 </template>
+<style>
+</style>
 <script>
 import profileCard from "../components/Profile.vue"
 export default {
@@ -155,7 +157,7 @@ export default {
                 this.goToTop();
                 setTimeout( ()=>{
                     this.selected = false;
-                    },300
+                    },200
                 );
             }
         },
